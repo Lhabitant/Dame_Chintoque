@@ -6,7 +6,7 @@ public class Main
 	// TODO write comment
 	public static void main(String[] args)
 	{
-		new DameChinoise().play();
+		new ChineseCheckers().play(); // The player start a game
 	}
 
 }
