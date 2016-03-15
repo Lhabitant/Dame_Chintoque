@@ -22,6 +22,7 @@ public class ChineseCheckers
 	public ChineseCheckers()
 	{
 		this.gameBoard = new Gameboard();
+		//j
 	}
 
 
