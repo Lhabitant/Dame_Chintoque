@@ -1,20 +1,28 @@
-// TODO write comment
-// TODO rewrite this class according to the Main (a constuctor and a method called play)
+// TODO write comment DONE
+// TODO rewrite this class according to the Main (a constuctor and a method called play) DONE
+/**
+ * this class is use for make a new game
+ * 
+ * @author lecomtel
+ */
 public class ChineseCheckers
 {
-	// TODO write comment
-	// TODO rename field (not compliant with coding conventions)
-	private final int Nbrplayer = 6;
+	// TODO write comment DONE
+	// TODO rename field (not compliant with coding conventions) DONE
+	/**
+	 * this attribut is for the number of player who can play 
+	 */
+	private final int nbrPlayer = 6; 
 	
-	// TODO rename field (not compliant with coding conventions)	
-	private int Turn;
+	// TODO rename field (not compliant with coding conventions) DONE
+	private int turn;
 	
 	// it's the gameboard
 	private Gameboard gameBoard;
 	
 	
 	// TODO rewrite comment (english), explain what means "a game ready to be played"
-	// TODO think 
+	// TODO think DONE ?
 	/**
 	 * a game ready to be played
 	 * the gameboard is in its starting configuration
@@ -22,14 +30,15 @@ public class ChineseCheckers
 	public ChineseCheckers()
 	{
 		this.gameBoard = new Gameboard();
-		//j
+		
 	}
 
 
 	/**
 	 * plays the game (...)
 	 */
-	public void play() {
+	public void play() 
+	{	
 		while(/* Conditon : the game isn't won */) 
 		{
 				if(Turn == 0) // it's the turn of the player 1
@@ -60,18 +69,5 @@ public class ChineseCheckers
 					
 				}
 		
+		}
 	}
-
-	
-	/* RULE IN FRENCH // We need to translate that 
-	 * Chaque joueur dispose de dix pions repartis dans leurs branches
-	 * respectives. Ils possedent une couleur diff�rente en fonction du joueur.
-	 *
-	 * Le jeu ce joue a six joueur chacun leur tour. Le but du jeu est
-	 * d'atteindre la branche opoose. Les pions peuvent ce deplacer dans six
-	 * directions. Pour eliminer un autre pion, on doit etre juxtaposer a ce
-	 * dernier, si apres avoir eliminer un piont on se retrouve encore
-	 * juxtaposer a un autre pion on peut encore l'eliminer, ainsi de suite.
-	 */
-
-}
