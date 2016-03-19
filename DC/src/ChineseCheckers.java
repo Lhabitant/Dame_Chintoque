@@ -21,11 +21,14 @@ public class ChineseCheckers
 	private Gameboard gameBoard;
 	
 	
-	// TODO rewrite comment (english), explain what means "a game ready to be played"
+	// TODO rewrite comment (english), explain what means "a game ready to be played" DONE
 	// TODO think DONE ?
 	/**
 	 * a game ready to be played
 	 * the gameboard is in its starting configuration
+	 * the gameboard has created
+	 * the piece has placed
+	 * and the rules has explained
 	 */
 	public ChineseCheckers()
 	{
