@@ -1,5 +1,4 @@
-// TODO write comment DONE
-// TODO rewrite this class according to the Main (a constuctor and a method called play) DONE
+
 /**
  * this class is use for make a new game
  * 
@@ -7,36 +6,32 @@
  */
 public class ChineseCheckers
 {
-	// TODO write comment DONE
-	// TODO rename field (not compliant with coding conventions) DONE
+	// TODO fix comment (ask for advice)
+	// TODO wirte (done) just after TODO, not at the end of line next time
+	
 	/**
 	 * this attribut is for the number of player who can play 
 	 */
 	private final int nbrPlayer = 6; 
-	
-	// TODO rename field (not compliant with coding conventions) DONE
+
+	// TODO write comment
 	private int turn;
-	
+
+	// TODO write "javadoc" comment
 	// it's the gameboard
 	private Gameboard gameBoard;
 	
-	
-	// TODO rewrite comment (english), explain what means "a game ready to be played" DONE
-	// TODO think DONE ?
 	/**
-	 * a game ready to be played
-	 * the gameboard is in its starting configuration
-	 * the gameboard has created
-	 * the piece has placed
-	 * and the rules has explained
+	 * Create a new game ready to be played 
+	 * (the gameboard is in its starting configuration)
 	 */
 	public ChineseCheckers()
 	{
 		this.gameBoard = new Gameboard();
-		
 	}
 
 
+	// TODO detail comment (algorithm)
 	/**
 	 * plays the game (...)
 	 */
