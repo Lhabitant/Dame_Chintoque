@@ -6,9 +6,7 @@
  */
 public class ChineseCheckers
 {
-	// TODO fix comment (ask for advice)
-	// TODO wirte (done) just after TODO, not at the end of line next time
-	
+	// TODO fix comment (ask for advice)	
 	/**
 	 * this attribut is for the number of player who can play 
 	 */
