@@ -6,17 +6,35 @@
  */
 public class ChineseCheckers
 {
-	// TODO fix comment (ask for advice)	
+	// TODO declare as constant	
 	/**
-	 * this attribut is for the number of player who can play 
+	 * the number of player who can play 
 	 */
-	private final int nbrPlayer = 6; 
-
-	// TODO write comment
-	private int turn;
-
-	// TODO write "javadoc" comment
-	// it's the gameboard
+	private final int NBRPLAYER = 6; 
+ 
+	/**
+	 * Number of the player currently playing
+	 */
+	private int currentNumberPlayer;
+	
+	/**
+	 * current position of a piece
+	 */
+	private int X;
+	private int Y;
+	/**
+	 * the futur position
+	 */
+	private int X0;
+	private int Y0;
+	
+	/**
+	 *  if a piece can jumpOver a other piece
+	 */
+	private boolean jumpOver;
+	/**
+	 * it's the gameboard
+	 */
 	private Gameboard gameBoard;
 	
 	/**
@@ -32,35 +50,78 @@ public class ChineseCheckers
 	// TODO detail comment (algorithm)
 	/**
 	 * plays the game (...)
+	 *while win == 0 do
+	 *	while currentNumberPlayer < nbrPlayer do
+	 *			do currentNumberPlayer++
+	 *		jumpOver = true
+	 *		if currentNumberPlayer == 1
+	 *			entrer les coordonnées du pion sélectionné X Y
+	 *			entrer ou il va aller X0 Y0
+	 *			if gameBoard[X0][Y0] == 0
+	 *				X = X0
+	 *				Y = Y0
+	 *			endif 
+	 *			if gameBoard[X0][Y0] != 0
+	 *				X0 = X0+(X0 - X)
+	 *				Y0 = Y0+(Y0 - Y)
+	 *				if gameBoard [X0][Y0] != 0
+	 *					X = X0
+	 *					Y = Y0
+	 *					jumpOver == true
+	 *				endif
+	 *			endif
+	 *		endif 
+	 *	endwhile
+	 *endwhile
 	 */
 	public void play() 
 	{	
-		while(/* Conditon : the game isn't won */) 
+		while(win = 0) 
 		{
-				if(Turn == 0) // it's the turn of the player 1
+			while (currentNumberPlayer < NBRPLAYER)
+			{
+				currentNumberPlayer++;
+				jumpOver = true;
+				if(currentNumberPlayer == 0) // it's the turn of the player 1
 				{
 					/*
-					 * if a piece jump over a other piece it isn't incremented
-					 * else if a piece don't jump over a other piece it's incremented
+					 * get piece XY
+					 * get XY movement
 					 */
+					if (this.gameBoard[this.X][this.Y] == 0)
+					{
+						this.X = this.X0;
+						this.Y = this.Y0;
+					}
+					if (this.gameBoard[this.X0][this.Y0] != 0)
+					{
+						this.X0 = this.X0+(this.X0 - this.X);
+						this.Y0 = this.Y0+(this.Y0 - this.Y);
+						if (this.gameBoard [this.X0][this.Y0] != 0)
+						{
+							this.X = this.X0;
+							this.Y = this.Y0;
+							this.jumpOver = true;
+						}
+					}
 				}
-				else if(Turn == 1) // it's the turn of the player 2
+				else if(currentNumberPlayer == 1) // it's the turn of the player 2
 				{
 				
 				}
-				else if(Turn == 2) // it's the turn of the player 3
+				else if(currentNumberPlayer == 2) // it's the turn of the player 3
 				{
 				
 				}
-				else if(Turn == 3) // it's the turn of the player 4
+				else if(currentNumberPlayer == 3) // it's the turn of the player 4
 				{
 				
 				}
-				else if(Turn == 4) // it's the turn of the player 5
+				else if(currentNumberPlayer == 4) // it's the turn of the player 5
 				{
 				
 				}
-				else if(Turn == 5) // it's the turn of the player 6
+				else if(currentNumberPlayer == 5) // it's the turn of the player 6
 				{
 					
 				}
