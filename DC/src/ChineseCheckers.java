@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 
 /**
  * this class represents a chinese checkers
@@ -18,6 +20,11 @@ public class ChineseCheckers
 	private Gameboard gameBoard;
 	
 	/**
+	 * Create a keyboard's reader
+	 */
+	Scanner sc = new Scanner(System.in);
+	
+	/**
 	 * Create a new game ready to be played 
 	 * (the gameboard is in its starting configuration)
 	 */
@@ -34,6 +41,7 @@ public class ChineseCheckers
 	 */
 	public int playerMoveX(int X, int X0)	
 	{
+		X0 = X
 		return X0; 
 	}
 	
@@ -45,9 +53,9 @@ public class ChineseCheckers
 	 */
 	public int playerMoveY(int Y, int Y0)
 	{
+		Y0 = Y;
 		return Y0; 
 	}
-	
 
 	// TODO detail comment (algorithm)
 	/**
@@ -68,18 +76,43 @@ public class ChineseCheckers
 	public void play() 
 	{	
 		int currentPlayerNumber = 1;
-		
 		boolean won = false;
+		
+		int X;
+		int Y;
+		int Y0;
+		int X0;
 		while (!won) 
 		{
 			do
 			{
-				playerMoveX(X,X0);
-				playerMoveY(Y,Y0);
+				X = sc.nextInt();
+				Y = sc.nextInt();
+				
+				X0 = sc.nextInt();
+				Y0 = sc.nextInt();
+					
+				
 			}
-			while();
+			while (X0 != 0 && Y0 != 0)
+			{
+				do
+				{
+					X = sc.nextInt();
+					Y = sc.nextInt();
+					
+					X0 = sc.nextInt();
+					Y0 = sc.nextInt();
+					
+					
+					this.gameBoard[X][Y] = 0;
+					this.gameBoard[X0][Y0] = currentPlayerNumber;
+				}
+			};
 			currentPlayerNumber++;
 		
 		}
-	}//
+	}
+
+
 }
