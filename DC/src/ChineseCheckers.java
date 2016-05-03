@@ -108,7 +108,7 @@ public class ChineseCheckers
 					this.gameBoard[X][Y] = 0;
 					this.gameBoard[X0][Y0] = currentPlayerNumber;
 				}
-			};
+			}
 			currentPlayerNumber++;
 		
 		}

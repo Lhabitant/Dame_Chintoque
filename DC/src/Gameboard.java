@@ -45,32 +45,36 @@ public class Gameboard
 		*/ 
 	public Gameboard()
 	{
+		 this.gameBoard = new int [16][16];
 		int X = 0;
 		int Y = 0;
 		
-		while(X<=17)
+		while(X<16)
 		{
-			while(Y <= 17)
+			while(Y < 16)
 			{
 				gameBoard[X][Y] = 0;
+				Y++;
 			}
+			X++;
 		}
 		 X = 0;
 		 Y = 0;
 		
-		while(X<=17)
+		while(X<16)
 		{
-			while(Y <= 17)
+			Y = 0;
+			while(Y < 16)
 			{
-				if(X<5)
+				if(X==4 && Y<9 && Y>4 || X==3 && Y<8 && Y>4 || X==2 && Y<7 && Y>4 || X==1 && Y<6 && Y>4 || X==0 && Y<5 && Y>4)
 				{
 					gameBoard[X][Y] = 1;
 				}
-				if(X>17)
+				if(X>14 && Y>9 && Y<14)
 				{
 					gameBoard[X][Y] = 4;
 				}
-				if(Y<4)
+				if(Y<4 && X<9 && X>4)
 				{
 					gameBoard[X][Y] = 2;
 				}
@@ -78,7 +82,7 @@ public class Gameboard
 				{
 					gameBoard[X][Y] = 3;
 				}
-				if(Y<13)
+				if(Y>13 && X>13)
 				{
 					gameBoard[X][Y] = 5;
 				}
@@ -86,23 +90,48 @@ public class Gameboard
 				{
 					gameBoard[X][Y] = 6;
 				}
-
+				Y++;
+				System.out.println(Y);
 			}
+			X++;
+			System.out.println(X+"X");
 		}		
 		
 	}
-
-	public void PrintGameBoard()
+/*
+	public void printGameBoard()
 	{
 		int X = 0;
 		int Y = 0;
 		
-		while(X<=17)
+		
+		while(X<=16)
 		{
-			while(Y <= 17)
+			while(Y<=16)
 			{
 				System.out.println(gameBoard[X][Y]);
+				Y++;
 			}
+			X++;
+		}
 	}
+*/	
+	public String toString()
+	{
+		String display = "";
+		for (int i = 0; i < this.gameBoard.length; i++)
+		{
+			//display+=this.gameBoard[i];
+			for (int j = 0; j < this.gameBoard[i].length; j++)
+			{
+				display+=this.gameBoard[i][j] + " ";
+				
+			}
+			display+="\n";
+		}
+		System.out.println(display);
+		return display;
 	}
 }
+
+
