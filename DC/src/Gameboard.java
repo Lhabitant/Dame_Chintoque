@@ -45,13 +45,13 @@ public class Gameboard
 		*/ 
 	public Gameboard()
 	{
-		 this.gameBoard = new int [16][16];
+		 this.gameBoard = new int [17][17];
 		int X = 0;
 		int Y = 0;
 		
-		while(X<16)
+		while(X<17)
 		{
-			while(Y < 16)
+			while(Y < 17)
 			{
 				gameBoard[X][Y] = 0;
 				Y++;
@@ -61,32 +61,32 @@ public class Gameboard
 		 X = 0;
 		 Y = 0;
 		
-		while(X<16)
+		while(X<17)
 		{
 			Y = 0;
-			while(Y < 16)
+			while(Y < 17)
 			{
-				if(X==4 && Y<9 && Y>4 || X==3 && Y<8 && Y>4 || X==2 && Y<7 && Y>4 || X==1 && Y<6 && Y>4 || X==0 && Y<5 && Y>4)
+				if(X==3 && Y<8 && Y>3 || X==2 && Y<7 && Y>3 || X==1 && Y<6 && Y>3 || X==0 && Y==4)
 				{
 					gameBoard[X][Y] = 1;
 				}
-				if(X>14 && Y>9 && Y<14)
+				if(X==13 && Y<13 && Y>8 || X==14 && Y<13 && Y>9 || X==15 && Y<13 && Y>10 || X==16 && Y==12)
 				{
 					gameBoard[X][Y] = 4;
 				}
-				if(Y<4 && X<9 && X>4)
+				if(X==4 && Y<4 || X==5 && Y>0 && Y<4 || X==6 && Y>1 && Y<4 || X==7 && Y==3 )
 				{
 					gameBoard[X][Y] = 2;
 				}
-				if(X==10 && Y==5 || X==11 && Y>4 && Y<7 || X==12 && Y>4 && Y<8 || X==13 && Y>4 && Y<9)
+				if(X==9 && Y==4 || X==10 && Y>3 && Y<6 || X==11 && Y>3 && Y<7 || X==12 && Y>3 && Y<8)
 				{
 					gameBoard[X][Y] = 3;
 				}
-				if(Y>13 && X>13)
+				if(X==9 && Y==13 || X==10 && Y<15 && Y>12 || X==11 && Y<16 && Y>12 || X==12 && Y>12)
 				{
 					gameBoard[X][Y] = 5;
 				}
-				if(X==5 && Y>9 && Y<14 || X==6 && Y>10 && Y<14 || X==7 && Y>11 && Y<14 || X==8 && Y==13)
+				if(X==4 && Y>8 && Y<13 || X==5 && Y>9 && Y<13 || X==6 && Y>10 && Y<13 || X==7 && Y==12)
 				{
 					gameBoard[X][Y] = 6;
 				}
@@ -119,13 +119,17 @@ public class Gameboard
 	public String toString()
 	{
 		String display = "";
+		int t = 16;
 		for (int i = 0; i < this.gameBoard.length; i++)
 		{
+			for(int s = 0; s < t-i; s++)
+			{
+				display+=" ";
+			}
 			//display+=this.gameBoard[i];
 			for (int j = 0; j < this.gameBoard[i].length; j++)
 			{
 				display+=this.gameBoard[i][j] + " ";
-				
 			}
 			display+="\n";
 		}

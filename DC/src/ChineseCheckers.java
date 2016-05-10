@@ -41,7 +41,7 @@ public class ChineseCheckers
 	 */
 	public int playerMoveX(int X, int X0)	
 	{
-		X0 = X
+		X0 = X;
 		return X0; 
 	}
 	
@@ -84,20 +84,15 @@ public class ChineseCheckers
 		int X0;
 		while (!won) 
 		{
-			do
-			{
 				X = sc.nextInt();
 				Y = sc.nextInt();
 				
 				X0 = sc.nextInt();
 				Y0 = sc.nextInt();
-					
-				
-			}
-			while (X0 != 0 && Y0 != 0)
+		}
+			while ((X0 != 0) && (Y0 != 0))
+			
 			{
-				do
-				{
 					X = sc.nextInt();
 					Y = sc.nextInt();
 					
@@ -107,12 +102,7 @@ public class ChineseCheckers
 					
 					this.gameBoard[X][Y] = 0;
 					this.gameBoard[X0][Y0] = currentPlayerNumber;
-				}
 			}
 			currentPlayerNumber++;
-		
 		}
 	}
-
-
-}
