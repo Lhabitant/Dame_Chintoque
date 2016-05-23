@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 
  * @author lecomtel
  */
-public class ChineseCheckers
+public class ChineseCheckers 
 {
 	// TODO declare as constant	
 	/**
@@ -44,7 +44,6 @@ public class ChineseCheckers
 		X0 = X;
 		return X0; 
 	}
-	
 	/**
 	 * this method is use for calculate the movement of a piece in Y
 	 * @param Y
@@ -100,7 +99,7 @@ public class ChineseCheckers
 					Y0 = sc.nextInt();
 					
 					
-					this.gameBoard[X][Y] = 0;
+					this.gameBoard[X][Y] ;
 					this.gameBoard[X0][Y0] = currentPlayerNumber;
 			}
 			currentPlayerNumber++;

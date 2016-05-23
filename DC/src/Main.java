@@ -13,7 +13,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		System.out.println("test");
-		new Gameboard();
+		new Gameboard(); 
 		System.out.println("toast");
 		new Gameboard().toString();//trying to diplay the gameboard
 		//new ChineseCheckers().play(); // it call the lunch of a new party

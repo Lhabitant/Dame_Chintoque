@@ -1,4 +1,4 @@
-//
+ //
 /**
  * A chinese checkers gameboard
  * 
@@ -16,32 +16,32 @@ public class Gameboard
 	
 	 /**
 		* Creates a new gameboard is in its starting configuration
-		*		                  1					row 1
-		*		                 1 1 				row 2
-		*		                1 1 1				row 3
-		*		               1 1 1 1				row 4
-		*		      2 2 2 2 x x x x x 6 6 6 6		row 5
-		*	column1--/ 2 2 2 x x x x x x 6 6 6  	row 6
-		*	column2---/ 2 2 x x x x x x x 6 6 		row 7 
-		*	column3----/ 2 x x x x x x x x 6 		row 8
-		*   column4-----/ x x x x x x x x x 		row 9
-		*	             3 x x x x x x x x 5  		row 10
-		*		        3 3 x x x x x x x 5 5  		row 11
-		*		       3 3 3 x x x x x x 5 5 5     	row 12
-		*		      3 3 3 3 x x x x x 5 5 5 5   	row 13
-		*	 column5-/ / / / / 4 4 4 4 / / / /      row 14   
-		*	 column6--/ / / / / 4 4 4 / / /	/		row 15
-		*	 column7---/ / / / / 4 4 / / / /		row 16
-		*	 column8----/ / / / / 4	/ /	/ /			row 17
-		*	 column9-----/ / / / / / / / /
-		*	 column10-----/ / / / / / / /
-		*    column11------/ / / / / / /
-		*    column12-------/ / / / / /
-		*    column13--------/ / / / /
-		*	 column14---------/ / / /
-		* 	 column15----------/ / /
-		* 	 column16-----------/ /
-		*  	 column17------------/
+		*		                  1					row 0
+		*		                 1 1 				row 1
+		*		                1 1 1				row 2
+		*		               1 1 1 1				row 3
+		*		      2 2 2 2 x x x x x 6 6 6 6		row 4
+		*	column0--/ 2 2 2 x x x x x x 6 6 6  	row 5
+		*	column1---/ 2 2 x x x x x x x 6 6 		row 6 
+		*	column2----/ 2 x x x x x x x x 6 		row 7
+		*   column3-----/ x x x x x x x x x 		row 8
+		*	             3 x x x x x x x x 5  		row 9
+		*		        3 3 x x x x x x x 5 5  		row 10
+		*		       3 3 3 x x x x x x 5 5 5     	row 11
+		*		      3 3 3 3 x x x x x 5 5 5 5   	row 12
+		*	 column4-/ / / / / 4 4 4 4 / / / /      row 13   
+		*	 column5--/ / / / / 4 4 4 / / /	/		row 14
+		*	 column6---/ / / / / 4 4 / / / /		row 15
+		*	 column7----/ / / / / 4	/ /	/ /			row 16
+		*	 column8-----/ / / / / / / / /
+		*	 column9------/ / / / / / / /
+		*    column10------/ / / / / / /
+		*    column11-------/ / / / / /
+		*    column12--------/ / / / /
+		*	 column13---------/ / / /
+		* 	 column14----------/ / /
+		* 	 column15-----------/ /
+		*  	 column16------------/
 		*/ 
 	public Gameboard()
 	{
@@ -90,11 +90,13 @@ public class Gameboard
 				{
 					gameBoard[X][Y] = 6;
 				}
+				if(X==4 && Y>3 && Y<9 || X==5 && Y>3 && Y<10 || X==6 && Y>3 && Y<11 || X==7 && Y>3 && Y<12 || X==8 && Y>3 && Y<13 || X==9 && Y>4 && Y<13 || X==10 && Y>5 && Y<13 || X==11 && Y>6 && Y<13 || X==12 && Y>7 && Y<13)
+				{
+					gameBoard[X][Y] = -1;
+				}
 				Y++;
-				System.out.println(Y);
 			}
 			X++;
-			System.out.println(X+"X");
 		}		
 		
 	}
@@ -129,7 +131,18 @@ public class Gameboard
 			//display+=this.gameBoard[i];
 			for (int j = 0; j < this.gameBoard[i].length; j++)
 			{
-				display+=this.gameBoard[i][j] + " ";
+				if(this.gameBoard[i][j] == 0)
+				{
+					display+=" "+ " ";
+				}
+				else if(this.gameBoard[i][j] == -1)
+				{
+					display+="0" + " ";
+				}
+				else
+				{
+					display+=this.gameBoard[i][j] + " ";
+				}
 			}
 			display+="\n";
 		}
