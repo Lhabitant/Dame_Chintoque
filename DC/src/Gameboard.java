@@ -100,24 +100,12 @@ public class Gameboard
 		}		
 		
 	}
-/*
-	public void printGameBoard()
+
+	public int[][] getGameBoard()
 	{
-		int X = 0;
-		int Y = 0;
-		
-		
-		while(X<=16)
-		{
-			while(Y<=16)
-			{
-				System.out.println(gameBoard[X][Y]);
-				Y++;
-			}
-			X++;
-		}
+		return gameBoard;
 	}
-*/	
+	
 	public String toString()
 	{
 		String display = "";
@@ -149,6 +137,22 @@ public class Gameboard
 		System.out.println(display);
 		return display;
 	}
+	
+	
+	public void modGameBoard()
+	{
+		System.out.println("TEST");
+		int x = ChineseCheckers.playerMoveX();
+		int y = ChineseCheckers.playerMoveY();
+		int x1 = ChineseCheckers.playerMoveX();
+		int y1 = ChineseCheckers.playerMoveY();
+		this.gameBoard[x][y] = -1;
+		this.gameBoard[x1][y1] = ChineseCheckers.getCurrentplayer();
+		toString();
+		System.out.println("toast");
+		
+	}
+	
 }
 
 

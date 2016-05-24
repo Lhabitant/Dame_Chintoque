@@ -8,11 +8,11 @@ import java.util.Scanner;
  */
 public class ChineseCheckers 
 {
-	// TODO declare as constant	
 	/**
 	 * the number of player who can play 
 	 */
 	private final static int NUMBER_OF_PLAYERS = 6; 
+	public static int currentPlayerNumber = 1;
 	
 	/**
 	 * it's the gameboard
@@ -22,7 +22,7 @@ public class ChineseCheckers
 	/**
 	 * Create a keyboard's reader
 	 */
-	Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in);
 	
 	/**
 	 * Create a new game ready to be played 
@@ -35,25 +35,27 @@ public class ChineseCheckers
 	
 	/**
 	 * this method is use for calculate the movement of a piece in X
-	 * @param X
-	 * @param X0
-	 * @return X0
+	 * @return x
 	 */
-	public int playerMoveX(int X, int X0)	
+	public static int playerMoveX()	
 	{
-		X0 = X;
-		return X0; 
+		int x = sc.nextInt();
+		return x; 
 	}
 	/**
 	 * this method is use for calculate the movement of a piece in Y
-	 * @param Y
-	 * @param Y0
-	 * @return Y0
+	 * @return y
 	 */
-	public int playerMoveY(int Y, int Y0)
+	public static int playerMoveY()
 	{
-		Y0 = Y;
-		return Y0; 
+		int y = sc.nextInt();
+		return y; 
+	}
+	
+	public static int getCurrentplayer()
+	{
+		
+		return currentPlayerNumber;
 	}
 
 	// TODO detail comment (algorithm)
@@ -71,37 +73,23 @@ public class ChineseCheckers
 	 *      <update current player>
 	 *  }
 	 *  	
-	 */
-	public void play() 
-	{	
-		int currentPlayerNumber = 1;
+	 */	
+	public void move(Gameboard game)
+	{
 		boolean won = false;
-		
-		int X;
-		int Y;
-		int Y0;
-		int X0;
 		while (!won) 
 		{
-				X = sc.nextInt();
-				Y = sc.nextInt();
-				
-				X0 = sc.nextInt();
-				Y0 = sc.nextInt();
-		}
-			while ((X0 != 0) && (Y0 != 0))
-			
-			{
-					X = sc.nextInt();
-					Y = sc.nextInt();
-					
-					X0 = sc.nextInt();
-					Y0 = sc.nextInt();
-					
-					
-					this.gameBoard[X][Y] ;
-					this.gameBoard[X0][Y0] = currentPlayerNumber;
-			}
+			game.modGameBoard();
 			currentPlayerNumber++;
+			if(currentPlayerNumber >= 7)
+			{
+				currentPlayerNumber = 1;
+			}	
+			
 		}
+		
+	}
+	
+	
+	
 	}
